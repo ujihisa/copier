@@ -1,3 +1,7 @@
+module Copier
+  class NotSupported < StandardError; end
+end
+
 def Copier(text)
   case RUBY_PLATFORM
   when /darwin/
@@ -5,6 +9,6 @@ def Copier(text)
   when /cygwin/
     File.open('/dev/clipboard', 'wb') {|io| io.write text.gsub("\x0A", "\n") }
   else
-    raise RUBY_PLATFORM + " is not supported yet by Copier."
+    raise Copier::NotSupported, RUBY_PLATFORM + " is not supported yet by Copier."
   end
 end
