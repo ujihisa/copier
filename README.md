@@ -2,19 +2,17 @@
 
     $ gem install copier
 
-will be available soon later.
-
-## usage
+## Usage
 
     require 'copier'
     Copier('text')
 
-run the code and then you can paste `text` by Cmd-v on Mac OS X, Ctrl-v on Windows, and as well on other platforms.
+Run the code to copier copys to clipboard and then you can paste `text` by Cmd-V on Mac OS X, Ctrl-V on Windows, and as well on other platforms.
 
-## development
+## Development
 
-issues
+### Issues
 
-* no windows support yet
-* no GNOME support yet
+* No windows support yet
+* No GNOME support yet
 * no KDE support yet
