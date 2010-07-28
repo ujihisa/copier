@@ -5,6 +5,8 @@ unless respond_to? :require_relative
 end
 
 require_relative '../lib/copier'
+require 'tempfile'
+Copier.config_prepare
 
 describe 'Copier()' do
   describe 'in default case' do
@@ -32,14 +34,21 @@ describe 'Copier()' do
 
   describe 'with config' do
     before do
-      Copier.disable_config_file = false
+      Copier.disable_config_file = true
+      Copier.config_prepare
     end
 
     it '.copy_method can copy by block' do
       Copier.copy_method = lambda do |a|
         a.should == "Copier will be used over ssh"
       end
-      Copier("Copier wille be used over ssh")
+      Copier("Copier will be used over ssh")
+    end
+
+    it '.copy_file can copy to file' do
+      Copier.copy_file = Tempfile.new('copier_spec').path
+      Copier("fork it")
+      File.read(Copier.copy_file).should == "fork it"
     end
   end
 end
