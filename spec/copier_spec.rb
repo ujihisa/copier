@@ -12,4 +12,14 @@ describe 'Copier()' do
     Copier(a)
     `pbpaste`.chomp.should == a
   end
+  
+  it 'raises error in not supported env' do
+    RUBY_PLATFORM = "hi"
+    lambda { Copier("a") }.should raise(Copier::NotSupported)
+  end
+
+  it 'but not raise raise_error=false' do
+    RUBY_PLATFORM = "hi"
+    lambda { Copier("a",false) }.should_not raise(Copier::NotSupported)
+  end
 end
