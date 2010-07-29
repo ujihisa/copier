@@ -25,9 +25,14 @@ This library supports the following platforms. I'm always welcome patches for su
 * Mac OS X
 * Windows (cygwin)
 
+## Licence
+
+Nothing but not public domain. We'll set it soon.
+
 ## development
 
 issues
 
 * no GNOME support yet
 * no KDE support yet
+* copier over ssh
