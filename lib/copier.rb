@@ -64,6 +64,8 @@ def Copier(text)
     IO.popen('pbcopy', 'w') {|io| io.write text }
   when /cygwin/
     File.open('/dev/clipboard', 'wb') {|io| io.write text.gsub("\x0A", "\n") }
+  when /linux/
+    IO.popen('xclip -selection clipboard', 'w') {|io| io.write text}
   else
     raise Copier::NotSupported, RUBY_PLATFORM + " is not supported yet by Copier."
   end

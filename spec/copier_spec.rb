@@ -30,6 +30,14 @@ describe 'Copier()' do
       #`pbpaste`.chomp.should == a
       pending 'Please fill this case... I dont know how to paste text'
     end
+
+    it 'uses xclip on linux' do
+      pending 'This platform is not Linux, so you cannot run this case now' unless
+        /linux/ =~ RUBY_PLATFORM
+      a = rand.to_s
+      Copier(a)
+      `xclip -selection clipboard -o`.chomp.should == a
+    end
   end
 
   describe 'with config' do
