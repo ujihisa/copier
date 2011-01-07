@@ -24,6 +24,7 @@ This library supports the following platforms. I'm always welcome patches for su
 
 * Mac OS X
 * Windows (cygwin)
+* Linux
 
 ## Licence
 
@@ -56,6 +57,6 @@ This library supports the following platforms. I'm always welcome patches for su
 
 issues
 
-* no GNOME support yet
-* no KDE support yet
+* no GNOME support yet (?)
+* no KDE support yet (?)
 * copier over ssh
