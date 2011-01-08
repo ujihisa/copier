@@ -52,11 +52,3 @@ This library supports the following platforms. I'm always welcome patches for su
     CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
     TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-## development
-
-issues
-
-* no GNOME support yet (?)
-* no KDE support yet (?)
-* copier over ssh
